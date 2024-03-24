@@ -1,3 +1,16 @@
+const baseURL = "whatever localhost is";
+
+document.addEventListener("DOMContentLoaded", () => {
+  const searchBar = document.querySelector(".searchbox");
+  const button = document.querySelector("button");
+  const addToTable = document.querySelector(".addbutton");
+  const removeFromTable = document.querySelector("td:last-child");
+
+  button.addEventListener("click", () => {
+    fetch(baseURL + "?");
+  });
+});
+
 /**
  * create a new table row in the table
  */
@@ -7,6 +20,12 @@ function mapRow(food) {
   const name = document.createElement("td");
   const sugars = document.createElement("td");
   const close = document.createElement("td");
+
+  name.innerText = food.name;
+  sugars.innerText = food.sugars;
+  close.innerText = "Remove Item";
+
+  return tr;
 }
 
 /**
