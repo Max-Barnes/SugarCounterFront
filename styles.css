@@ -3,6 +3,7 @@ body {
 }
 .container {
     padding-left: 7%;
+    padding-right: 7%;
 }
 .header {
     display: flex;
@@ -50,7 +51,7 @@ body {
 
 
 table {
-    background-color: #dbe9e9;
+    background-color: #ffffff;
     border-collapse: collapse;
     width: 100%;
 }
@@ -59,14 +60,14 @@ tr:nth-child(even) {
     background-color: #bbc5c5;
 }
 
-tr:hover {
-    background-color: #65f0f0;
+td:last-child:hover {
+    background-color: #ff0303bd;
 }
 
 th, td {
-    padding: .75rem 2rem;
     border-right: 2px solid #808080;
     text-align: right;
+    padding: 2rem;
 }
 th {
     text-align: center;
@@ -82,8 +83,37 @@ button {
 }
 
 img {
-    max-width: 100%;
+    max-width: 50%;
 }
 
-span {
+.searchitems {
+    background-color: #dbe9e9;
+    border-radius: 4px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    border-right: 1px solid #808080;
+
+}
+
+.item {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-right: 1px solid #808080;
+
+}
+
+.info {
+    display: flex;
+    flex-wrap: nowrap;
+
+}
+h2 {
+    color: #dbe9e9;
+}
+
+.addbutton {
+    font-weight: 900;
+    font-size: 3rem;
 }
