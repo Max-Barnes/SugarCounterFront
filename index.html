@@ -44,18 +44,39 @@
         </div>
           <div class="addbutton">+</div>
         </div>
-      </div> 
+      </div>
+  <div class="custom">
+    <h2> Add a Custom Item </h2>
+      <div>
+        <label for="name">Name: </label>
+        <input id ="name" type="text" name="name" placeholder="Add Food Name Here!" required>
+      </div>
+      <div>
+        <label for="sugars">Grams of Sugar: </label>
+        <input id="sugars" type="number" name="sugars" placeholder="0" min="0" required>
+      </div>
+        <button type="submit" id="submitter">Add To List</button>
+  </div> 
   <div class="list-to-math"> <!-- come back to create template-->
         <h2>List of Items</h2>
         <table>
-          <tbody>
-            <tr> 
-              <th>Click the "Remove Item" box to close!</th>
-              <td>0g</td>
-              <td>Remove Item</td>
+          <thead>
+            <tr>
+              <th>Food Name</th>
+              <th>Sugar</th>
+              <th>Remove Item</th>
             </tr>
+          </thead>
+          <tbody id="table-body">
           </tbody>
-        </table>
+        </table> 
+        <template id="row-template">
+            <tr> 
+              <th class="food-name">Click the "Remove Item" box to close!</th>
+              <td class="sugar-in-grams">0g</td>
+              <td class="removebutton">Remove Item</td>
+            </tr>
+        </template>
       </div>
       <div class="info">
         <img src="img/sugar.jpg" alt="plastic-man-eating-sugar">
