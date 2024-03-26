@@ -121,4 +121,5 @@ h2 {
 .addbutton {
     font-weight: 900;
     font-size: 3rem;
+    cursor: pointer;
 }

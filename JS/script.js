@@ -11,14 +11,14 @@ let foodItems = [
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
-  displayFoods(foodItems);
-
   // might need most of these sooner or later
   const searchBar = document.querySelector(".searchbox");
   const button = document.querySelector("button");
   const addToTable = document.querySelector(".addbutton");
-  const removeFromTable = document.querySelector("td:last-child");
+  const removeButtons = document.getElementsByClassName("removebutton");
   const submitter = document.getElementById("submitter");
+
+  displayFoods(foodItems);
 
   submitter.addEventListener("click", () => {
     let entry = userEntry();
@@ -42,7 +42,6 @@ function displayFoods() {
     displayItem(item);
   });
 }
-
 /**
  * create a new table row in the table from form or search bar
   Html Template
@@ -68,7 +67,8 @@ function displayItem(item) {
       item.sugar + " grams of sugar";
   }
 
-  templateContent.querySelector(".removebutton").innerText = "Remove";
+  let remover = templateContent.querySelector(".removebutton");
+  remover.innerText = "Remove";
 
   itemTableBody.appendChild(templateContent);
 }
@@ -82,12 +82,6 @@ function displayItem(item) {
  * turn user created form into json item for the array
  */
 function userEntry() {
-  // const formData = new FormData(document.querySelector(".item-form"));
-  // const json = {};
-
-  // formData.forEach((value, key) => {
-  //   json[key] = value;
-  // });
   const name = document.getElementById("name");
   const sugars = document.getElementById("sugars");
 
@@ -97,4 +91,13 @@ function userEntry() {
   json.sugar = sugars.value;
 
   return json;
+}
+
+/**
+ * remove button should remove item from table at its index
+ */
+function removeFood(index) {
+  foodItems.splice(index, 1);
+
+  displayFoods(foodItems);
 }
