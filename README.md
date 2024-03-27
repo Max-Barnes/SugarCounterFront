@@ -1,3 +1,3 @@
 # SugarCounterFront
 
-Front end for sugarcounter project
+Prototype Front end for sugarcounter project in vanilla js
